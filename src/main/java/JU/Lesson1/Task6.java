@@ -3,27 +3,35 @@ package JU.Lesson1;
 public class Task6 {
 
     public static void main(String[] args){
-        int[] array = new int[5];
+        int[] array = new int[10];
         int sum = 0;
+        int min = 0;
+        int max = 0;
+        int indexMax = 0;
+        int indexMin = 0;
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 50 - 25);
         }
-        bubbleSort(array);
-        for (int i = 1;i < array.length - 1; i++){
-            sum += array[i];
-        }
-        System.out.println(sum);
-    }
-
-    private static void bubbleSort(int[] arr) {
-        for (int i = arr.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int t = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = t;
-                }
+        for (int i = 0; i < array.length;i++){
+            if(array[i] < min){
+                min = array[i];
+                indexMin = i;
+            }
+            if(array[i] > max){
+                max = array[i];
+                indexMax = i;
             }
         }
+        if(indexMin > indexMax){
+            for (int i = indexMax + 1;i < indexMin; i++){
+                sum += array[i];
+            }
+        }
+        if(indexMax > indexMin){
+            for (int i = indexMin + 1;i < indexMax; i++){
+                sum += array[i];
+            }
+        }
+        System.out.println(sum);
     }
 }
