@@ -13,11 +13,11 @@ public class Task6 {
             array[i] = (int) (Math.random() * 50 - 25);
         }
         for (int i = 0; i < array.length;i++){
-            if(array[i] < min){
+            if(array[i] <= min){
                 min = array[i];
                 indexMin = i;
             }
-            if(array[i] > max){
+            if(array[i] >= max){
                 max = array[i];
                 indexMax = i;
             }
