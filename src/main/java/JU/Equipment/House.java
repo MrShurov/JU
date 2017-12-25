@@ -11,7 +11,7 @@ public class House {
         desktop.on();
         mixer.off();
         mixer.on();
-        /*ArrayList<Equipment> arrayList = new ArrayList<>();
+        ArrayList<Equipment> arrayList = new ArrayList<>();
         arrayList.add(desktop);
         arrayList.add(mixer);
         for (Equipment e:arrayList) {
@@ -19,6 +19,6 @@ public class House {
                 sum += e.getPower();
             }
         }
-        System.out.println(sum);*/
+        System.out.println(sum);
     }
 }

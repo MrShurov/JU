@@ -2,6 +2,8 @@ package JU.Trapeze;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+
 @Data
 public class Trapezoid {
     private int id;
@@ -55,5 +57,21 @@ public class Trapezoid {
 
     public double perimeter(){
         return AB + BC + CD + AD;
+    }
+
+    public static double amountTrapezoidWithLargerThanAverageArea(ArrayList<Trapezoid> trapezoids){
+        double avg = 0;
+        double sum = 0;
+        int counter = 0;
+        for (Trapezoid t: trapezoids) {
+            sum += t.getSquare();
+        }
+        avg = sum/trapezoids.size();
+        for (Trapezoid t: trapezoids) {
+            if(t.getSquare() >= avg){
+               counter++;
+            }
+        }
+        return counter;
     }
 }
